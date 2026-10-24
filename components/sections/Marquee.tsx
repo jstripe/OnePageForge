@@ -22,7 +22,7 @@ function Row({ items, reverse, duration }: { items: string[]; reverse?: boolean;
 
 export function Marquee({ rowA, rowB }: { rowA: string[]; rowB: string[] }) {
   return (
-    <div className="space-y-3" role="list" aria-label="Examples of what you can make">
+    <div className="space-y-3" role="group" aria-label="Examples of what you can make">
       <Row items={rowA} duration="50s" />
       <Row items={rowB} reverse duration="60s" />
     </div>

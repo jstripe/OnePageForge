@@ -73,12 +73,12 @@ export default function PricingPage() {
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b"><td className="sticky left-0 bg-card/50 p-3 font-medium">Price (one-time)</td>{plans.map((p) => <td key={p.id} className="p-3">${p.price}</td>)}</tr>
-                <tr className="border-b"><td className="sticky left-0 bg-card/50 p-3 font-medium">Access period</td>{plans.map((p) => <td key={p.id} className="p-3">{p.period}</td>)}</tr>
-                <tr className="border-b"><td className="sticky left-0 bg-card/50 p-3 font-medium">Credits included</td>{plans.map((p) => <td key={p.id} className="p-3">{p.credits}</td>)}</tr>
+                <tr className="border-b"><th scope="row" className="sticky left-0 bg-card/50 p-3 text-left font-medium">Price (one-time)</th>{plans.map((p) => <td key={p.id} className="p-3">${p.price}</td>)}</tr>
+                <tr className="border-b"><th scope="row" className="sticky left-0 bg-card/50 p-3 text-left font-medium">Access period</th>{plans.map((p) => <td key={p.id} className="p-3">{p.period}</td>)}</tr>
+                <tr className="border-b"><th scope="row" className="sticky left-0 bg-card/50 p-3 text-left font-medium">Credits included</th>{plans.map((p) => <td key={p.id} className="p-3">{p.credits}</td>)}</tr>
                 {liveFeatures.map((f) => (
                   <tr key={f.name} className="border-b">
-                    <td className="sticky left-0 bg-card/50 p-3 font-medium">{f.name}</td>
+                    <th scope="row" className="sticky left-0 bg-card/50 p-3 text-left font-medium">{f.name}</th>
                     {plans.map((p) => <td key={p.id} className="p-3"><Check className="h-4 w-4 text-primary" /></td>)}
                   </tr>
                 ))}

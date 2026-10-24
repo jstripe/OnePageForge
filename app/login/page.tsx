@@ -52,5 +52,5 @@ function LoginForm() {
 }
 
 export default function LoginPage() {
-  return <React.Suspense fallback={null}><LoginForm /></React.Suspense>;
+  return <React.Suspense fallback={<div className="min-h-[560px]" />}><LoginForm /></React.Suspense>;
 }

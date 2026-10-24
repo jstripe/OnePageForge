@@ -1,54 +1,48 @@
-# SiteForge Deploy Guide
+# SiteForge deploy guide
 
-## Prerequisites
-
-- Node.js 18+
-- Wrangler CLI (`npm i -g wrangler`)
-- Cloudflare account with Workers paid plan
-- Stripe account
-
-## Local Development
+## Local development
 
 ```bash
 npm install
-npm run dev          # Next.js on :3000
-npm run worker:dev   # Worker on :8787 (needs .dev.vars)
+npm run dev            # Next.js on :3000 (front end only)
+npm run build          # static export to out/
+npx wrangler dev --local --port 8791   # worker + static site + local D1 (uses .dev.vars, MOCK_AI=1)
 ```
 
-Create `.dev.vars` from `.dev.vars.example`:
-```
-STRIPE_WEBHOOK_SECRET=whsec_...
-STRIPE_SECRET_KEY=sk_test_...
-STRIPE_API_BASE=https://api.stripe.com
-MOCK_AI=1
-```
+Create `.dev.vars` from `.dev.vars.example`. Use `--local` so the AI binding is not proxied to your Cloudflare account.
 
-## Build
+## Tests (worker must be running)
 
 ```bash
-npm run build        # Static export to out/
+API_BASE=http://localhost:8791 npm run test:api     # 51 checks incl. the generator
+API_BASE=http://localhost:8791 npm run test:claim   # 12 checks, needs STRIPE_API_BASE=http://localhost:8799 in .dev.vars
 ```
 
-## Deploy to Cloudflare
+## Deploy (Cloudflare Workers Builds)
 
-1. Create a D1 database:
-   ```bash
-   wrangler d1 create siteforge-db
-   ```
-2. Update `wrangler.jsonc` with the database_id.
-3. Set secrets:
-   ```bash
-   wrangler secret put STRIPE_WEBHOOK_SECRET
-   wrangler secret put STRIPE_SECRET_KEY
-   ```
-4. Deploy:
-   ```bash
-   wrangler deploy
-   ```
+Workers & Pages > Create > Import a repository > pick the repo.
+Build command `npm run build`, deploy command `npx wrangler deploy`, Node 22.
 
-## Test
+`wrangler.jsonc` has no `database_id` on purpose: Wrangler 4 creates the D1 database on the first deploy and finds it by name afterwards.
+The schema is created lazily on the first request. Do not create the database by hand.
+
+Settings > Domains & Routes: add the domain and www.domain (the worker redirects http and www to https on the apex).
+
+## Secrets and variables
+
+| Name | Where | Purpose |
+|---|---|---|
+| `ADMIN_EMAILS` | wrangler.jsonc vars | comma separated emails allowed into /admin |
+| `STRIPE_SECRET_KEY` | Worker secret (restricted, read-only) | optional, activates plans automatically after checkout |
+| `STRIPE_WEBHOOK_SECRET` | Worker secret | optional, for `checkout.session.completed` and refund events |
+| `MOCK_AI` | never set in production | returns a canned page instead of calling Workers AI |
+
+Plans are recognised by the amount paid (`PLAN_CATALOG` in `lib/api-types.ts`). Keep each Stripe price equal to `amountCents`.
+
+## Brand and domain migration
 
 ```bash
-npm run test:api     # 35 API tests
-npm run test:claim   # 12 claim tests
+node scripts/migrate.mjs --name "NewName" --domain newdomain.com
+python3 scripts/brand-assets.py "NewName"
+npm run build
 ```

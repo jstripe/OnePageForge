@@ -6,6 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 import { features, steps, faqs, audiences, plans, marqueeRowA, marqueeRowB } from "@/lib/data";
 import { JsonLd, faqPage } from "@/components/JsonLd";
 import { UseCases } from "@/components/sections/UseCases";
+import { Photo } from "@/components/sections/Photo";
 import { Marquee } from "@/components/sections/Marquee";
 import { ProductIllustration } from "@/components/sections/ProductIllustration";
 import { BuyButton } from "@/components/BuyButton";
@@ -23,11 +24,11 @@ export default function HomePage() {
     <>
       <JsonLd data={faqPage(faqs)} />
       {/* Hero */}
-      <section className="relative overflow-hidden px-5 pb-20 pt-16 sm:px-6 sm:pb-28 sm:pt-24">
+      <section className="relative overflow-hidden px-5 pb-16 pt-14 sm:px-6 sm:pb-24 sm:pt-20">
         <div className="hero-glow pointer-events-none absolute inset-0" />
         <div className="grid-fade pointer-events-none absolute inset-0" />
-        <div className="relative mx-auto max-w-7xl">
-          <div className="mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+          <div className="text-center lg:text-left">
             <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
               Describe your business.<br />
               <span className="text-primary">Get a website.</span>
@@ -35,7 +36,7 @@ export default function HomePage() {
             <p className="mt-6 text-lg text-muted-foreground sm:text-xl">
               Enter a short description of what you do. SiteForge generates a complete, mobile-ready one-page website and hosts it for you. No builder to learn.
             </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
               <Button asChild size="lg" className="text-base">
                 <Link href="/app/">Create a website <ArrowRight className="ml-1 h-4 w-4" /></Link>
               </Button>
@@ -44,7 +45,12 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-          <ProductIllustration className="mt-14 sm:mt-20" />
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-[2rem] bg-primary/20 blur-3xl" aria-hidden />
+            <div className="relative overflow-hidden rounded-3xl border border-border/70 shadow-[0_30px_80px_-30px_hsl(var(--primary)/0.55)]">
+              <Photo name="home-hero" alt="A small business owner working on a laptop behind a cafe counter" priority sizes="(min-width: 1024px) 600px, 100vw" className="aspect-[4/3] w-full object-cover" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -116,7 +122,8 @@ export default function HomePage() {
             <h2 className="font-heading text-3xl font-bold sm:text-4xl">Three steps to your website</h2>
             <p className="mt-4 text-muted-foreground">No design skills, no coding, no complicated builder.</p>
           </div>
-          <div className="mt-12 grid gap-8 sm:grid-cols-3">
+          <ProductIllustration className="mt-12" />
+          <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((s) => (
               <div key={s.number} className="text-center">
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-2xl font-bold text-primary-foreground">{s.number}</div>
@@ -201,7 +208,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl rounded-3xl bg-gradient-to-br from-primary to-primary/80 p-10 text-center text-primary-foreground sm:p-16">
           <h2 className="font-heading text-3xl font-bold sm:text-4xl">Ready to create your website?</h2>
           <p className="mt-4 text-lg opacity-90">Starting at $14. One-time payment, no automatic renewal.</p>
-          <Button asChild size="lg" className="mt-8 bg-white text-primary hover:bg-white/90">
+          <Button asChild size="lg" className="mt-8 bg-white text-slate-900 hover:bg-white/90">
             <Link href="/app/">Create a website <ArrowRight className="ml-1 h-4 w-4" /></Link>
           </Button>
         </div>

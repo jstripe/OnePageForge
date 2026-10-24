@@ -31,7 +31,7 @@ export function Footer() {
           </div>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Product</h3>
+              <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Product</h2>
               <ul className="mt-4 space-y-3">
                 {footerLinks.product.map((l) => (
                   <li key={l.href}><Link href={l.href} className="text-sm text-foreground/80 transition-colors hover:text-foreground">{l.label}</Link></li>
@@ -39,7 +39,7 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Company</h3>
+              <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Company</h2>
               <ul className="mt-4 space-y-3">
                 {footerLinks.company.map((l) => (
                   <li key={l.href}><Link href={l.href} className="text-sm text-foreground/80 transition-colors hover:text-foreground">{l.label}</Link></li>
@@ -47,7 +47,7 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Legal</h3>
+              <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Legal</h2>
               <ul className="mt-4 space-y-3">
                 {footerLinks.legal.map((l) => (
                   <li key={l.href}><Link href={l.href} className="text-sm text-foreground/80 transition-colors hover:text-foreground">{l.label}</Link></li>

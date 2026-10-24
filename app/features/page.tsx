@@ -4,6 +4,7 @@ import { Sparkles, Globe, Smartphone, Palette, RefreshCw, Download, ArrowRight }
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
 import { features } from "@/lib/data";
+import { Photo } from "@/components/sections/Photo";
 import { UseCases } from "@/components/sections/UseCases";
 import { ProductIllustration } from "@/components/sections/ProductIllustration";
 
@@ -20,17 +21,26 @@ const comingSoon = Object.values(siteConfig.features).filter((f) => !f.live);
 export default function FeaturesPage() {
   return (
     <>
-      <section className="relative overflow-hidden px-5 pb-16 pt-16 sm:px-6 sm:pb-24 sm:pt-24">
+      <section className="relative overflow-hidden px-5 pb-16 pt-14 sm:px-6 sm:pb-24 sm:pt-20">
         <div className="hero-glow pointer-events-none absolute inset-0" />
         <div className="grid-fade pointer-events-none absolute inset-0" />
-        <div className="relative mx-auto max-w-5xl">
-          <div className="mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+          <div className="text-center lg:text-left">
             <p className="text-sm font-medium uppercase tracking-widest text-primary">Features</p>
             <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">From one sentence to a live page</h1>
             <p className="mt-6 text-lg text-muted-foreground">Describe your business, pick a style and get a complete one-page website with a hosted link. No technical knowledge needed.</p>
           </div>
-          <ProductIllustration className="mt-12 sm:mt-16" />
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-[2rem] bg-primary/20 blur-3xl" aria-hidden />
+            <div className="relative overflow-hidden rounded-3xl border border-border/70 shadow-[0_30px_80px_-30px_hsl(var(--primary)/0.55)]">
+              <Photo name="features-hero" alt="A shop owner working on a laptop in a bright room with boxes and flowers" priority sizes="(min-width: 1024px) 600px, 100vw" className="aspect-[4/3] w-full object-cover" />
+            </div>
+          </div>
         </div>
+      </section>
+
+      <section className="px-5 pb-4 sm:px-6">
+        <div className="mx-auto max-w-5xl"><ProductIllustration /></div>
       </section>
 
       <section className="px-5 py-16 sm:px-6 sm:py-20">

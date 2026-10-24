@@ -56,5 +56,5 @@ function SignupForm() {
 }
 
 export default function SignupPage() {
-  return <React.Suspense fallback={null}><SignupForm /></React.Suspense>;
+  return <React.Suspense fallback={<div className="min-h-[640px]" />}><SignupForm /></React.Suspense>;
 }

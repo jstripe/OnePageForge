@@ -31,9 +31,16 @@ export function UseCases() {
         {cases.map((c, i) => (
           <span key={c.key}>
             <a href={manifest[c.key].url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-foreground">{manifest[c.key].photographer}</a>
-            {i < cases.length - 1 ? ", " : "."}
+            {i < cases.length - 1 ? ", " : ""}
           </span>
         ))}
+        {[manifest["home-hero"], manifest["features-hero"]].map((h) => (
+          <span key={h.url}>
+            {", "}
+            <a href={h.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-foreground">{h.photographer}</a>
+          </span>
+        ))}
+        .
       </p>
     </div>
   );

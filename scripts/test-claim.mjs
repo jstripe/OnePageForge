@@ -1,7 +1,7 @@
 // Tests POST /api/billing/claim against a fake Stripe API on :8799. Needs `npm run worker:dev` with
 // STRIPE_SECRET_KEY=rk_test_local and STRIPE_API_BASE=http://localhost:8799 in .dev.vars.
 import http from "node:http";
-const BASE = "http://localhost:8787";
+const BASE = process.env.API_BASE || "http://localhost:8787";
 const sessions = {};
 const stripe = http.createServer((req, res) => {
   const id = req.url.split("/v1/checkout/sessions/")[1]?.split("?")[0];

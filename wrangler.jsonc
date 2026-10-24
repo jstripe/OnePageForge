@@ -12,7 +12,6 @@
   },
   "d1_databases": [{ "binding": "DB", "database_name": "onepageforge" }],
   "ai": { "binding": "AI" },
-  "triggers": { "crons": ["17 3 * * *"] },
   "vars": { "SITE_URL": "https://onepageforge.com", "ADMIN_EMAILS": "" },
   "observability": { "enabled": true }
 }

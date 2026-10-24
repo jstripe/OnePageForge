@@ -1,6 +1,7 @@
 import { ensureSchema } from "./lib/db";
 import { devCorsOrigin, originAllowed } from "./lib/origin";
 import { redirectTarget } from "./lib/redirect";
+import { purgeExpired } from "./lib/purge";
 import { Ctx, Env, HttpError, json } from "./lib/util";
 import * as auth from "./auth";
 import { claim, webhook } from "./stripe";
@@ -99,19 +100,11 @@ export default {
     const url = new URL(request.url);
     const target = redirectTarget(url, env.SITE_URL);
     if (target) return Response.redirect(target, 301);
-    if (url.pathname === "/api" || url.pathname.startsWith("/api/") || url.pathname.startsWith("/s/")) return handleApi(request, env, url, ctx);
+    if (url.pathname === "/api" || url.pathname.startsWith("/api/") || url.pathname.startsWith("/s/")) {
+      if (url.pathname.startsWith("/api/") && Math.random() < 0.005) ctx.waitUntil(purgeExpired(env).catch(() => {}));
+      return handleApi(request, env, url, ctx);
+    }
     return handleAsset(request, env, url);
   },
 
-  async scheduled(_ev: ScheduledController, env: Env, ctx: ExecutionContext): Promise<void> {
-    ctx.waitUntil((async () => {
-      await ensureSchema(env);
-      const now = Date.now();
-      await env.DB.batch([
-        env.DB.prepare(`DELETE FROM contact_messages WHERE created_at < ?`).bind(now - 365 * 86_400_000),
-        env.DB.prepare(`DELETE FROM sessions WHERE expires_at < ?`).bind(now),
-        env.DB.prepare(`DELETE FROM login_attempts WHERE window_start < ?`).bind(now - 86_400_000),
-      ]);
-    })());
-  },
 };

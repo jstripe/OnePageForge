@@ -24,7 +24,7 @@ export default function AboutPage() {
             { label: "Launched", value: siteConfig.launchMonth },
             { label: "Support", value: siteConfig.supportHours },
             { label: "Formats", value: "HTML download" },
-            { label: "Data kept", value: "Access period + 30 days" },
+            { label: "Websites kept", value: "Access period + 30 days" },
           ].map((f) => (
             <div key={f.label} className="surface">
               <p className="text-xs uppercase tracking-wider text-muted-foreground">{f.label}</p>

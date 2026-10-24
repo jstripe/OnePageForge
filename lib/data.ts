@@ -142,7 +142,7 @@ export const faqs = [
   },
   {
     question: "Is my data private?",
-    answer: "Yes. We do not use your business descriptions or generated websites to train our own models. Your data is stored securely on Cloudflare infrastructure and deleted after your access period plus 30 days. See our Privacy Policy for details.",
+    answer: "Yes. We do not use your business descriptions or generated websites to train our own models. Your data is stored securely on Cloudflare infrastructure, and generated websites are deleted 30 days after your access period ends. See our Privacy Policy for details.",
   },
   {
     question: "Can I get a refund?",

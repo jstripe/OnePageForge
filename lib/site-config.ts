@@ -18,7 +18,7 @@ export const siteConfig = {
   creditDefinition: "1 credit = 1 website generated",
   refundWindow: "14 days",
   refundThreshold: "3 credits used",
-  dataRetention: "We keep your data for the duration of your access period plus 30 days. After that, your generated websites and account data are deleted.",
+  dataRetention: "We keep your generated websites for the duration of your access period plus 30 days, then delete them. Your account profile stays until you delete your account.",
   refundWaiver: "This is a one-time payment. Nothing renews automatically. You can request a refund within 14 days if you have used fewer than 3 credits. See our Refund Policy for details.",
 
   social: {

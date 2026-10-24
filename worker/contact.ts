@@ -5,7 +5,7 @@ import { Ctx, HttpError, json, readJson } from "./lib/util";
 const EMAIL_RE = /^[^\s@]{1,64}@[^\s@.]+(\.[^\s@.]+)+$/;
 const MAX_PER_WINDOW = 5;
 
-/** Contact form: stores the message for the admin back office (/admin). Messages are purged after 12 months by the cron. */
+/** Contact form: stores the message for the admin back office (/admin). Messages are purged after 12 months (see lib/purge.ts). */
 export async function contact(c: Ctx): Promise<Response> {
   const b = await readJson<Partial<ContactRequest>>(c.request, 16 * 1024);
   const str = (v: unknown) => (typeof v === "string" ? v.trim() : "");

@@ -71,20 +71,20 @@ async function main() {
   const pi1 = "pi_" + randomUUID();
   eq(await hook(checkout("cs_a" + randomUUID(), userId, 1400, pi1)), 200, "starter purchase");
   let e = (await A.req("GET", "/api/me")).data.entitlement;
-  eq(e?.plan, "starter", "plan starter"); eq(e?.creditsTotal, 60, "60 credits"); eq(e?.active, true, "active");
+  eq(e?.plan, "starter", "plan starter"); eq(e?.creditsTotal, 5, "5 credits"); eq(e?.active, true, "active");
   ok(Math.abs(e.expiresAt - (Date.now() + 30 * 86400000)) < 120000, "access ~30 days");
   const evR = checkout("cs_r" + randomUUID(), userId, 3900, "pi_" + randomUUID());
   await hook(evR); await hook(evR);
   e = (await A.req("GET", "/api/me")).data.entitlement;
-  eq(e.creditsTotal, 300, "second plan stacks credits once (idempotent)"); eq(e.plan, "pro", "plan pro");
+  eq(e.creditsTotal, 25, "second plan stacks credits once (idempotent)"); eq(e.plan, "pro", "plan pro");
   eq(await hook(checkout("cs_u" + randomUUID(), userId, 777, "pi_x")), 200, "unknown amount 200");
-  eq((await A.req("GET", "/api/me")).data.entitlement.creditsTotal, 300, "unknown amount grants nothing");
+  eq((await A.req("GET", "/api/me")).data.entitlement.creditsTotal, 25, "unknown amount grants nothing");
 
   console.log("refund");
   const refundEv = (pi) => ({ id: "evt_" + randomUUID(), type: "charge.refunded", data: { object: { id: "ch_1", payment_intent: pi, refunded: true } } });
   eq(await hook(refundEv(pi1)), 200, "refund 200");
   e = (await A.req("GET", "/api/me")).data.entitlement;
-  eq(e.creditsTotal, 240, "refund removes 60 credits"); eq(e.active, true, "still active from other plan");
+  eq(e.creditsTotal, 20, "refund removes 5 credits"); eq(e.active, true, "still active from other plan");
 
   console.log("contact");
   const V = new Client();

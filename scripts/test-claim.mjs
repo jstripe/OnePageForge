@@ -28,13 +28,13 @@ try {
   const a = await user("a"), b = await user("b");
   let sid = "cs_test_" + rnd(); sessions[sid] = { ...base(a), id: sid };
   let r = await claim(a, sid); let j = await r.json();
-  ok(r.status === 200 && j.entitlement?.plan === "pro" && j.entitlement.creditsLeft === 240 && j.entitlement.active, "paid pro session unlocks 240 credits");
+  ok(r.status === 200 && j.entitlement?.plan === "pro" && j.entitlement.creditsLeft === 20 && j.entitlement.active, "paid pro session unlocks 20 credits");
   r = await claim(a, sid); j = await r.json();
-  ok(r.status === 200 && j.entitlement.creditsTotal === 240, "replay is idempotent (no double grant)");
+  ok(r.status === 200 && j.entitlement.creditsTotal === 20, "replay is idempotent (no double grant)");
   r = await claim(b, sid); ok(r.status === 409, "another account cannot claim the same session");
   sid = "cs_test_" + rnd(); sessions[sid] = { ...base(a, { amount_total: 1400 }), id: sid };
   r = await claim(a, sid); j = await r.json();
-  ok(r.status === 200 && j.entitlement.creditsTotal === 300 && j.entitlement.plan === "starter", "second purchase stacks credits");
+  ok(r.status === 200 && j.entitlement.creditsTotal === 25 && j.entitlement.plan === "starter", "second purchase stacks credits");
   sid = "cs_test_" + rnd(); sessions[sid] = { ...base(b, { payment_status: "unpaid" }), id: sid };
   r = await claim(b, sid); ok(r.status === 402, "unpaid session rejected");
   sid = "cs_test_" + rnd(); sessions[sid] = { ...base(a), id: sid };

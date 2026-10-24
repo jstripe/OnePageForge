@@ -1,0 +1,8 @@
+node_modules
+.next
+out
+.dev.vars
+.wrangler*
+*.tsbuildinfo
+.DS_Store
+media-source/

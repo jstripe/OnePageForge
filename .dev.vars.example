@@ -1,0 +1,4 @@
+STRIPE_WEBHOOK_SECRET=whsec_test_local
+STRIPE_SECRET_KEY=rk_test_local
+STRIPE_API_BASE=http://localhost:8799
+MOCK_AI=1

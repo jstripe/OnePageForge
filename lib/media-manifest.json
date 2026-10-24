@@ -1,0 +1,44 @@
+{
+ "restaurant": {
+  "alt": "Chef preparing a dish in a modern kitchen, showcasing culinary skills.",
+  "photographer": "Kampus Production",
+  "url": "https://www.pexels.com/photo/a-chef-cooking-in-the-kitchen-8629106/",
+  "blur": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQAgCdASoQAAsAA4BaJbAC7AYuvdCnI3nZj4AA/vRdC1mW82XQ0jY+3yYCKIKfgcxksKdiztW6149iz8yjZw06/MV2JYRV6HR8b+n8iG6l7NYnMXDbtTp8k9sfGrI7wGwKSRHX4zEf0gHfpvfAAA==",
+  "ratio": 1.498
+ },
+ "salon": {
+  "alt": "Close-up of hairstylist cutting client's hair indoors with scissors and comb.",
+  "photographer": "Engin Akyurt",
+  "url": "https://www.pexels.com/photo/person-cutting-hair-3356170/",
+  "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQAgCdASoQAAsAA4BaJYwCdADcP3GphH2AAP7taHquzPzXdDfrH9V/i9zLHeKUa3uaBf+HUW/f19J8ISNWQID+MA9M+5IlKbcSfegKufa0139cWK71OHa1UKQAAA==",
+  "ratio": 1.5
+ },
+ "freelancer": {
+  "alt": "A stylish young man works remotely on his laptop in a cozy indoor workspace.",
+  "photographer": "Tony Schnagl",
+  "url": "https://www.pexels.com/photo/stylish-man-using-laptop-5588217/",
+  "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQAgCdASoQAAsAA4BaJYgCdAYuu4yqf3fgAPw7UruD3v6SXJX3RKz+2FIsndexSzj/7iidZFcBGq4ESbg6jGSRJfB1b1G4Vje/89TX0ed/xVOGSJ32FSeBOwU4KPU/thUzhTGIvGSYZgAA",
+  "ratio": 1.4999
+ },
+ "consultant": {
+  "alt": "A business meeting between an elderly client and a consultant discussing documents at an office table.",
+  "photographer": "Kampus Production",
+  "url": "https://www.pexels.com/photo/an-elderly-man-consulting-an-insurance-agent-8441780/",
+  "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwAgCdASoQAAsAA4BaJZQAD40whaJ6P6x3AAD+3iaNYgpVv7+LS9GMqFDQx08jcc0SoAG9/QdERvL3G6DZc6PXTPKxFJeFVoY6e0gF8Zk/grSkzT64fBpNsVvyQAAA",
+  "ratio": 1.498
+ },
+ "shop": {
+  "alt": "A friendly shopkeeper stands behind shelves of homemade preserves.",
+  "photographer": "Demetra Ioannidou",
+  "url": "https://www.pexels.com/photo/smiling-shopkeeper-with-homemade-preserves-34674788/",
+  "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQAgCdASoQAAsAA4BaJbACdAYs32hCqaYAAP7Bqpd+cYMONrfHi3xrKiqOaLjbf5+r5qUI+wO7Jy1wIl69bfvZlxlx627afVcD998YOPZ9Dl72g52l0LcIUxNiTgqqAOhNZiOGjAetAAAA",
+  "ratio": 1.5
+ },
+ "coach": {
+  "alt": "A personal trainer and client engage in conversation at a gym, highlighting fitness and training concepts.",
+  "photographer": "Mikhail Nilov",
+  "url": "https://www.pexels.com/photo/two-people-in-a-gym-7697693/",
+  "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAgCdASoQAAsAA4BaJQBOgBxJN+mvfgOAAP71kHZy8fjC8PHNFk7jfbLcMsU9/uDUXHUBnPVu1WBBcTL4Kgb+fDoa98etxtWR8DGqix2EzNkbSuuVMmNSKtU7bAAA",
+  "ratio": 1.5
+ }
+}

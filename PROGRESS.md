@@ -2,9 +2,9 @@
 
 ## Phase 0: Brief
 - [x] Brief written (2026-10-24)
-- Brand: SiteForge
+- Brand: OnePageForge
 - Accent: #3B82F6
-- Folder: ~/siteforge
+- Folder: ~/onepageforge
 
 ## Phase 1: Build
 - [ ] Project structure and dependencies

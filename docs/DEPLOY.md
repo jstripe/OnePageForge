@@ -1,4 +1,4 @@
-# SiteForge deploy guide
+# OnePageForge deploy guide
 
 ## Local development
 

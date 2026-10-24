@@ -1,6 +1,6 @@
 PROJECT BRIEF
 
-Brand name (working name, can change at migration): SiteForge
+Brand name (working name, can change at migration): OnePageForge
 One-line pitch: Describe your business in a few words, get a complete one-page website in seconds, hosted and ready to share.
 Who it is for: Local businesses, freelancers, restaurants, salons, consultants who need a professional web presence without learning a website builder.
 Category / theme: AI one-page website generator SaaS
@@ -43,4 +43,4 @@ Look and feel:
 - Fonts: Inter for body, Cal Sans or similar geometric for headings (Claude decides)
 
 Legal entity: {{LEGAL ENTITY}}
-Local folder name: ~/siteforge
+Local folder name: ~/onepageforge

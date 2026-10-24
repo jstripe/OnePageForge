@@ -2,7 +2,7 @@ import type { MeResponse, User } from "../lib/api-types";
 import { ensureSchema, getEntitlement } from "./lib/db";
 import { b64url, Ctx, DAY_MS, Env, fromHex, HttpError, json, noContent, parseCookies, readJson, sha256Hex, timingSafeEqual, toHex, utf8 } from "./lib/util";
 
-const COOKIE = "siteforge_session";
+const COOKIE = "onepageforge_session";
 const SESSION_DAYS = 30;
 const PBKDF2_ITER = 100_000;
 const RL_WINDOW_MS = 15 * 60_000;

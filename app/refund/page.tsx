@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = { title: "Refund Policy", description: "SiteForge plans are one-time purchases. Read when you can request a refund and how it is processed.", alternates: { canonical: "/refund/" } };
+export const metadata: Metadata = { title: "Refund Policy", description: "OnePageForge plans are one-time purchases. Read when you can request a refund and how it is processed.", alternates: { canonical: "/refund/" } };
 
 const s = siteConfig;
 

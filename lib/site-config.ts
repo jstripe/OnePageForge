@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: "SiteForge",
-  url: "https://siteforge.com",
+  name: "OnePageForge",
+  url: "https://onepageforge.com",
   tagline: "Describe your business. Get a website.",
   description: "Enter a short description of your business and get a complete, hosted one-page website. No builder to learn, no code to write.",
 
@@ -10,7 +10,7 @@ export const siteConfig = {
   registeredOffice: "{{REGISTERED OFFICE}}",
   governingLaw: "{{GOVERNING LAW}}",
 
-  supportEmail: "support@siteforge.com",
+  supportEmail: "support@onepageforge.com",
   supportHours: "Monday to Friday, 9 AM to 5 PM GMT",
   phone: "",
 
@@ -22,11 +22,11 @@ export const siteConfig = {
   refundWaiver: "This is a one-time payment. Nothing renews automatically. You can request a refund within 14 days if you have used fewer than 3 credits. See our Refund Policy for details.",
 
   social: {
-    instagram: { url: "https://instagram.com/siteforge", live: false },
-    tiktok: { url: "https://tiktok.com/@siteforge", live: false },
-    x: { url: "https://x.com/siteforge", live: false },
-    youtube: { url: "https://youtube.com/@siteforge", live: false },
-    linkedin: { url: "https://linkedin.com/company/siteforge", live: false },
+    instagram: { url: "https://instagram.com/onepageforge", live: false },
+    tiktok: { url: "https://tiktok.com/@onepageforge", live: false },
+    x: { url: "https://x.com/onepageforge", live: false },
+    youtube: { url: "https://youtube.com/@onepageforge", live: false },
+    linkedin: { url: "https://linkedin.com/company/onepageforge", live: false },
   },
 
   subProcessors: [

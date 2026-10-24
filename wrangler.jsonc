@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "siteforge",
+  "name": "onepageforge",
   "main": "worker/index.ts",
   "compatibility_date": "2026-10-01",
   "assets": {
@@ -10,9 +10,9 @@
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
   },
-  "d1_databases": [{ "binding": "DB", "database_name": "siteforge" }],
+  "d1_databases": [{ "binding": "DB", "database_name": "onepageforge" }],
   "ai": { "binding": "AI" },
   "triggers": { "crons": ["17 3 * * *"] },
-  "vars": { "SITE_URL": "https://siteforge.com", "ADMIN_EMAILS": "" },
+  "vars": { "SITE_URL": "https://onepageforge.com", "ADMIN_EMAILS": "" },
   "observability": { "enabled": true }
 }

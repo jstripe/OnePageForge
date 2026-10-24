@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = { title: "Terms of Service", description: "The terms that apply when you use SiteForge: plans and credits, payments, refunds, acceptable use and liability.", alternates: { canonical: "/terms/" } };
+export const metadata: Metadata = { title: "Terms of Service", description: "The terms that apply when you use OnePageForge: plans and credits, payments, refunds, acceptable use and liability.", alternates: { canonical: "/terms/" } };
 
 const s = siteConfig;
 
@@ -37,7 +37,7 @@ export default function TermsPage() {
 
       <h2>7. Generated websites</h2>
       <p>The websites you generate using {s.name} are yours to use. You may download the HTML and host it elsewhere. We grant you a non-exclusive, worldwide licence to use, modify and display any website generated through your account.</p>
-      <p>We host your generated websites at a {s.name} subdomain (e.g. siteforge.com/s/your-slug) for the duration of your access period. After your access expires, hosted websites return a "this site has expired" notice. {s.dataRetention}</p>
+      <p>We host your generated websites at a {s.name} subdomain (e.g. onepageforge.com/s/your-slug) for the duration of your access period. After your access expires, hosted websites return a "this site has expired" notice. {s.dataRetention}</p>
 
       <h2>8. Acceptable use</h2>
       <p>You may not use {s.name} to generate websites that:</p>

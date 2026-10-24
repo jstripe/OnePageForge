@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = { title: "Security", description: "How SiteForge protects your account, payments and generated websites.", alternates: { canonical: "/security/" } };
+export const metadata: Metadata = { title: "Security", description: "How OnePageForge protects your account, payments and generated websites.", alternates: { canonical: "/security/" } };
 
 const s = siteConfig;
 

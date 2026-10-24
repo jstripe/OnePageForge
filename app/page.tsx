@@ -34,7 +34,7 @@ export default function HomePage() {
               <span className="text-primary">Get a website.</span>
             </h1>
             <p className="mt-6 text-lg text-muted-foreground sm:text-xl">
-              Enter a short description of what you do. SiteForge generates a complete, mobile-ready one-page website and hosts it for you. No builder to learn.
+              Enter a short description of what you do. OnePageForge generates a complete, mobile-ready one-page website and hosts it for you. No builder to learn.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
               <Button asChild size="lg" className="text-base">
@@ -85,7 +85,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-heading text-3xl font-bold sm:text-4xl">Who it is for</h2>
-            <p className="mt-4 text-muted-foreground">SiteForge is built for people who need a simple page online without learning a website builder.</p>
+            <p className="mt-4 text-muted-foreground">OnePageForge is built for people who need a simple page online without learning a website builder.</p>
           </div>
           <div className="mt-12"><UseCases /></div>
         </div>
@@ -96,7 +96,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-heading text-3xl font-bold sm:text-4xl">Everything you need to go online</h2>
-            <p className="mt-4 text-muted-foreground">From generation to hosting, SiteForge handles the full process so you can focus on your business.</p>
+            <p className="mt-4 text-muted-foreground">From generation to hosting, OnePageForge handles the full process so you can focus on your business.</p>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((f) => {

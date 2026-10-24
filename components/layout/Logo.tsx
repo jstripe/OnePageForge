@@ -13,7 +13,7 @@ export function Logo({ className = "" }: { className?: string }) {
         <rect x="19.8" y="39.7" width="14" height="2.9" rx="1.4" fill="#2563EB" />
         <path d="M46 5.8l2.6 6.4 6.4 2.6-6.4 2.6L46 23.8l-2.6-6.4-6.4-2.6 6.4-2.6z" fill="#FEF08A" stroke="#2563EB" strokeWidth="1.2" strokeLinejoin="round" />
       </svg>
-      <span className="font-heading text-xl font-bold tracking-tight">SiteForge</span>
+      <span className="font-heading text-xl font-bold tracking-tight">OnePageForge</span>
     </Link>
   );
 }

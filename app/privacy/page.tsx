@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = { title: "Privacy Policy", description: "How SiteForge collects, uses, stores and protects your personal data, and the rights you have over it.", alternates: { canonical: "/privacy/" } };
+export const metadata: Metadata = { title: "Privacy Policy", description: "How OnePageForge collects, uses, stores and protects your personal data, and the rights you have over it.", alternates: { canonical: "/privacy/" } };
 
 const s = siteConfig;
 

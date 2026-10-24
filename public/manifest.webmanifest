@@ -1,6 +1,6 @@
 {
-  "name": "SiteForge",
-  "short_name": "SiteForge",
+  "name": "OnePageForge",
+  "short_name": "OnePageForge",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0f1e",

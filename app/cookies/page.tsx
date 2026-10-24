@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = { title: "Cookie Policy", description: "SiteForge uses only strictly necessary and functional cookies. See exactly which ones.", alternates: { canonical: "/cookies/" } };
+export const metadata: Metadata = { title: "Cookie Policy", description: "OnePageForge uses only strictly necessary and functional cookies. See exactly which ones.", alternates: { canonical: "/cookies/" } };
 
 const s = siteConfig;
 
@@ -21,7 +21,7 @@ export default function CookiesPage() {
       <table>
         <thead><tr><th>Name</th><th>Purpose</th><th>Type</th><th>Duration</th></tr></thead>
         <tbody>
-          <tr><td>siteforge_session</td><td>Keeps you signed in to your account</td><td>Strictly necessary</td><td>7 days (refreshed on each visit)</td></tr>
+          <tr><td>onepageforge_session</td><td>Keeps you signed in to your account</td><td>Strictly necessary</td><td>7 days (refreshed on each visit)</td></tr>
           <tr><td>theme</td><td>Remembers your light or dark mode preference</td><td>Functional (client-side only)</td><td>1 year</td></tr>
         </tbody>
       </table>

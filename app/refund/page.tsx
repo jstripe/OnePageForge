@@ -49,6 +49,9 @@ export default function RefundPage() {
       <p>If you dispute a charge with your bank instead of contacting us, we will provide the bank with records of your purchase and usage. If the dispute is resolved in our favour, your account may be suspended.</p>
       <p>We encourage you to contact us first so we can resolve the issue directly.</p>
 
+      <h2>Changes to this policy</h2>
+      <p>We may update this Refund Policy. The version shown here on the date of your purchase is the one that applies to that purchase. When we make a material change we update the "Last updated" date and tell account holders by email.</p>
+
       <h2>Contact</h2>
       <p>Questions about refunds? Email <a href={`mailto:${s.supportEmail}`}>{s.supportEmail}</a>.</p>
       <p>{s.legalEntity}<br />{s.registeredOffice}</p>

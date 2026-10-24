@@ -63,7 +63,8 @@ export default function PricingPage() {
       <section className="bg-card/50 px-5 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center font-heading text-3xl font-bold">Compare plans</h2>
-          <div className="mt-8 overflow-x-auto">
+          <p className="mt-4 text-center text-xs text-muted-foreground sm:hidden">Swipe sideways to see every plan</p>
+          <div className="mt-4 overflow-x-auto sm:mt-8">
             <table className="w-full min-w-[500px] text-sm">
               <thead>
                 <tr className="border-b text-left">
@@ -108,12 +109,12 @@ export default function PricingPage() {
           <div className="mt-8 space-y-4">
             {billingFaqs.map((f) => (
               <details key={f.question} className="surface group">
-                <summary className="flex cursor-pointer items-center justify-between font-medium">{f.question}<span className="ml-2 text-muted-foreground transition-transform group-open:rotate-45">+</span></summary>
+                <summary className="min-h-[44px] flex cursor-pointer items-center justify-between font-medium">{f.question}<span className="ml-2 text-muted-foreground transition-transform group-open:rotate-45">+</span></summary>
                 <p className="mt-3 text-sm text-muted-foreground">{f.answer}</p>
               </details>
             ))}
             <details className="surface group">
-              <summary className="flex cursor-pointer items-center justify-between font-medium">What payment methods do you accept?<span className="ml-2 text-muted-foreground transition-transform group-open:rotate-45">+</span></summary>
+              <summary className="min-h-[44px] flex cursor-pointer items-center justify-between font-medium">What payment methods do you accept?<span className="ml-2 text-muted-foreground transition-transform group-open:rotate-45">+</span></summary>
               <p className="mt-3 text-sm text-muted-foreground">Payments are processed by Stripe. Stripe shows the available payment methods at checkout, which typically include cards (Visa, Mastercard, American Express) and other methods depending on your location.</p>
             </details>
           </div>

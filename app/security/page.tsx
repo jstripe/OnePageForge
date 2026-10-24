@@ -41,6 +41,17 @@ export default function SecurityPage() {
         <li><strong>Data retention.</strong> {s.dataRetention}</li>
       </ul>
 
+      <h2>Access controls and monitoring</h2>
+      <ul>
+        <li><strong>Least access.</strong> Access to production configuration and customer data is limited to the people who need it to run the service, and admin functions are restricted to approved administrator accounts.</li>
+        <li><strong>Isolation.</strong> Each customer can only read, list and delete their own generated websites and account data.</li>
+        <li><strong>Logging.</strong> The platform records request and error logs so that suspicious activity and failures can be detected and investigated. Passwords and payment details are never written to logs.</li>
+        <li><strong>Updates.</strong> We review dependencies and apply security patches to the software we run.</li>
+      </ul>
+
+      <h2>Your responsibilities</h2>
+      <p>Security is shared. Choose a strong, unique password, do not share your login, sign out on shared devices, and tell us straight away if you think your account has been accessed by someone else. See our <a href="/privacy/">Privacy Policy</a> for how we handle your data.</p>
+
       <h2>Rate limiting</h2>
       <p>API endpoints that accept user input (contact form, generation requests) are rate-limited to prevent abuse. Excessive requests result in temporary blocks.</p>
 

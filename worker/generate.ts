@@ -125,7 +125,8 @@ export async function getSite(c: Ctx): Promise<Response> {
 export async function deleteSite(c: Ctx): Promise<Response> {
   const user = await requireUser(c);
   const id = c.params.id;
-  await c.env.DB.prepare(`DELETE FROM generated_sites WHERE id = ? AND user_id = ?`).bind(id, user.id).run();
+  const res = await c.env.DB.prepare(`DELETE FROM generated_sites WHERE id = ? AND user_id = ?`).bind(id, user.id).run();
+  if (!res.meta.changes) throw new HttpError(404, "not_found", "Website not found.");
   return json({ ok: true });
 }
 

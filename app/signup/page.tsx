@@ -42,7 +42,7 @@ function SignupForm() {
         <label className="grid gap-1 text-sm font-medium">Email<Input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" /></label>
         <label className="grid gap-1 text-sm font-medium">Password (min. 8 characters)<Input type="password" required minLength={8} maxLength={200} value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="new-password" /></label>
         <label className="flex items-start gap-2 text-sm">
-          <input type="checkbox" className="mt-1" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
+          <input type="checkbox" className="mt-0.5 h-5 w-5 shrink-0 accent-[hsl(var(--primary))]" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
           <span>I am 18 or older and agree to the <Link href="/terms/" className="text-primary underline underline-offset-4" target="_blank">Terms of Service</Link> and <Link href="/privacy/" className="text-primary underline underline-offset-4" target="_blank">Privacy Policy</Link>.</span>
         </label>
         {error && <p role="alert" className="text-sm text-red-500">{error}</p>}

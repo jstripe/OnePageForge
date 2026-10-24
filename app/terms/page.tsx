@@ -37,7 +37,7 @@ export default function TermsPage() {
 
       <h2>7. Generated websites</h2>
       <p>The websites you generate using {s.name} are yours to use. You may download the HTML and host it elsewhere. We grant you a non-exclusive, worldwide licence to use, modify and display any website generated through your account.</p>
-      <p>We host your generated websites at a {s.name} subdomain (e.g. siteforge.com/s/your-slug) for the duration of your access period. After your access expires, hosted websites return a "this site has expired" notice. We delete the data {s.dataRetention.toLowerCase()}</p>
+      <p>We host your generated websites at a {s.name} subdomain (e.g. siteforge.com/s/your-slug) for the duration of your access period. After your access expires, hosted websites return a "this site has expired" notice. {s.dataRetention}</p>
 
       <h2>8. Acceptable use</h2>
       <p>You may not use {s.name} to generate websites that:</p>
@@ -61,20 +61,30 @@ export default function TermsPage() {
       <h2>11. Intellectual property</h2>
       <p>The {s.name} name, logo, code and design are owned by {s.legalEntity}. You may not copy, modify or redistribute the {s.name} platform, its source code or its branding. The websites you generate are yours, as described in Section 7.</p>
 
-      <h2>12. Limitation of liability</h2>
+      <h2>12. Your content and our licence to host it</h2>
+      <p>You keep ownership of the business descriptions you enter and of the websites generated from them. You give us a limited, non-exclusive licence to store, process and display that content only as needed to generate your website, host it at its {s.name} link, and keep the service running and secure. We do not sell your content and do not use it to train our own models. You confirm that you have the right to use the names, text and any other material you put into your descriptions.</p>
+
+      <h2>13. Termination</h2>
+      <p>You can stop using {s.name} at any time and can delete your account from your account page, which removes your profile and generated websites. Because plans are one-time purchases, deleting your account does not by itself entitle you to a refund; the <Link href="/refund/">Refund Policy</Link> applies.</p>
+      <p>We may suspend or end your access, and remove hosted websites, if you breach these Terms, if we are required to by law, or if your use puts the service or other customers at risk. Where reasonably possible we will tell you why and give you the chance to download your websites first.</p>
+
+      <h2>14. Disclaimers</h2>
+      <p>{s.name} is provided "as is" and "as available". To the extent the law allows, we give no warranty that the service will be uninterrupted or error-free, that generated websites will meet your expectations, or that they will rank in search engines or bring you customers. Nothing in these Terms limits rights you have under consumer law that cannot be excluded.</p>
+
+      <h2>15. Limitation of liability</h2>
       <p>To the maximum extent permitted by applicable law, {s.legalEntity} is not liable for any indirect, incidental, special, consequential or punitive damages, including lost profits, lost revenue, lost data or business interruption, arising from your use of {s.name}.</p>
       <p>Our total liability for any claim related to {s.name} is limited to the amount you paid us in the 12 months before the claim arose.</p>
 
-      <h2>13. Indemnification</h2>
+      <h2>16. Indemnification</h2>
       <p>You agree to indemnify and hold harmless {s.legalEntity}, its officers, directors and employees from any claim, demand or damage (including legal fees) arising from your use of {s.name}, your generated websites or your breach of these Terms.</p>
 
-      <h2>14. Governing law and disputes</h2>
+      <h2>17. Governing law and disputes</h2>
       <p>These Terms are governed by the laws of {s.governingLaw}. Any dispute that cannot be resolved informally shall be submitted to the courts of {s.governingLaw}.</p>
 
-      <h2>15. Changes to these Terms</h2>
+      <h2>18. Changes to these Terms</h2>
       <p>We may update these Terms from time to time. When we do, we update the "Last updated" date at the top. If the changes are material, we will notify you by email. Your continued use of {s.name} after a change means you accept the updated Terms.</p>
 
-      <h2>16. Contact</h2>
+      <h2>19. Contact</h2>
       <p>Questions about these Terms? Email <a href={`mailto:${s.supportEmail}`}>{s.supportEmail}</a>.</p>
       <p>{s.legalEntity}<br />{s.registeredOffice}</p>
     </article>

@@ -54,6 +54,9 @@ export default function PrivacyPage() {
       </table>
       <p>We do not sell your personal data. We do not share it with anyone beyond these sub-processors.</p>
 
+      <h3>When we disclose data</h3>
+      <p>Beyond the sub-processors above, we disclose personal data only to comply with a legal obligation or valid legal request, to protect the rights, safety or property of our customers or the service, or to a successor if the business is sold or reorganised, in which case this policy continues to apply to your data until you are told otherwise.</p>
+
       <h2>5. International transfers</h2>
       <p>Your data may be processed in the United States and at Cloudflare edge locations worldwide. Where data is transferred outside the UK or EEA, it is protected by Standard Contractual Clauses or equivalent safeguards.</p>
 

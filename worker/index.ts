@@ -89,7 +89,7 @@ async function handleAsset(request: Request, env: Env, url: URL): Promise<Respon
   const extra: Record<string, string> = {};
   const ct = res.headers.get("content-type") || "";
   if (url.pathname.startsWith("/_next/static/")) extra["Cache-Control"] = "public, max-age=31536000, immutable";
-  else if (url.pathname.startsWith("/media/") || url.pathname.startsWith("/images/")) extra["Cache-Control"] = "public, max-age=2592000, stale-while-revalidate=86400";
+  else if (url.pathname.startsWith("/media/") || url.pathname.startsWith("/images/") || url.pathname.startsWith("/icons/")) extra["Cache-Control"] = "public, max-age=2592000, stale-while-revalidate=86400";
   else if (ct.includes("text/html")) extra["Cache-Control"] = "public, max-age=0, must-revalidate";
   return finish(res, extra);
 }

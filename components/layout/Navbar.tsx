@@ -17,7 +17,7 @@ export function Navbar() {
         <Logo />
         <div className="hidden items-center gap-6 md:flex">
           {navLinks.map((l) => (
-            <Link key={l.href} href={l.href} className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">{l.label}</Link>
+            <Link key={l.href} href={l.href} className="inline-flex min-h-[44px] items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">{l.label}</Link>
           ))}
         </div>
         <div className="hidden items-center gap-3 md:flex">
@@ -33,7 +33,7 @@ export function Navbar() {
             </>
           )}
         </div>
-        <button className="md:hidden" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"}>
+        <button className="-mr-2 flex h-11 w-11 items-center justify-center md:hidden" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"}>
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </nav>
@@ -41,7 +41,7 @@ export function Navbar() {
         <div className="border-t border-border/40 bg-background px-5 pb-6 pt-4 md:hidden">
           <div className="flex flex-col gap-4">
             {navLinks.map((l) => (
-              <Link key={l.href} href={l.href} className="text-base font-medium" onClick={() => setOpen(false)}>{l.label}</Link>
+              <Link key={l.href} href={l.href} className="flex min-h-[44px] items-center text-base font-medium" onClick={() => setOpen(false)}>{l.label}</Link>
             ))}
             <hr className="border-border/40" />
             {status === "in" ? (

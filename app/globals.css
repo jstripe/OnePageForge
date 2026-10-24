@@ -81,7 +81,7 @@
   .prose-custom li { @apply leading-relaxed; }
   .prose-custom a { @apply text-primary underline underline-offset-4 hover:text-primary/80; }
   .prose-custom strong { @apply font-semibold text-foreground; }
-  .prose-custom table { @apply mt-4 w-full text-sm; }
+  .prose-custom table { @apply mt-4 block w-full overflow-x-auto text-sm; }
   .prose-custom thead { @apply border-b text-left text-xs uppercase tracking-wider text-muted-foreground; }
   .prose-custom th, .prose-custom td { @apply p-3; }
   .prose-custom tbody tr { @apply border-b last:border-0; }

@@ -185,7 +185,7 @@ export default function HomePage() {
           <div className="mt-12 space-y-4">
             {faqs.map((f) => (
               <details key={f.question} className="surface group">
-                <summary className="flex cursor-pointer items-center justify-between text-base font-medium">
+                <summary className="flex min-h-[44px] cursor-pointer items-center justify-between text-base font-medium">
                   {f.question}
                   <span className="ml-2 text-muted-foreground transition-transform group-open:rotate-45">+</span>
                 </summary>

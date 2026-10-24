@@ -93,7 +93,28 @@ async function main() {
   eq((await V.req("POST", "/api/contact", { name: "Bot", email: "b@example.com", subject: "x", message: "spam", website: "http://spam" })).status, 200, "honeypot pretends success");
   eq((await A.req("GET", "/api/admin/overview")).status, 404, "admin hidden from non-admins");
 
-  // PRODUCT: add tests for the core tool here (spend credits, run out of credits, other users cannot read your data).
+  console.log("core tool: generate");
+  const D = "Family bakery in Leeds selling fresh bread and cakes";
+  eq((await A.req("POST", "/api/generate", { description: "short", style: "modern" })).status, 400, "short description 400");
+  eq((await A.req("POST", "/api/generate", { description: D, style: "nope" })).status, 400, "invalid style 400");
+  const noPlan = new Client(); await noPlan.req("POST", "/api/auth/signup", { name: "Nina", email: email(), password: PW });
+  eq((await noPlan.req("POST", "/api/generate", { description: D, style: "modern" })).status, 403, "no plan 403");
+  const left0 = (await A.req("GET", "/api/me")).data.entitlement.creditsLeft;
+  const g = await A.req("POST", "/api/generate", { description: D, style: "modern" });
+  eq(g.status, 201, "generate 201"); ok(g.data?.slug && g.data?.html?.includes("<html"), "returns slug and html");
+  eq((await A.req("GET", "/api/me")).data.entitlement.creditsLeft, left0 - 1, "one credit spent");
+  eq((await A.req("GET", "/api/sites")).data.sites.length, 1, "site listed");
+  eq((await A.req("GET", "/api/sites/" + g.data.id)).status, 200, "owner can read site");
+  const pub = await fetch(BASE + "/s/" + g.data.slug); eq(pub.status, 200, "hosted site served at /s/slug");
+  eq((await noPlan.req("GET", "/api/sites/" + g.data.id)).status, 404, "other user cannot read site");
+  eq((await noPlan.req("DELETE", "/api/sites/" + g.data.id)).status, 404, "other user cannot delete site");
+  eq((await noPlan.req("GET", "/api/sites")).data.sites.length, 0, "other user sees no sites");
+  let guard = 0, last = 201;
+  while (last === 201 && guard++ < 60) last = (await A.req("POST", "/api/generate", { description: D, style: "bold" })).status;
+  eq(last, 403, "running out of credits returns 403");
+  eq((await A.req("GET", "/api/me")).data.entitlement.creditsLeft, 0, "credits left 0");
+  eq((await A.req("DELETE", "/api/sites/" + g.data.id)).status, 200, "owner can delete site");
+  eq((await fetch(BASE + "/s/" + g.data.slug)).status, 404, "deleted site gone");
 
   console.log("delete account");
   eq((await A.req("DELETE", "/api/account")).status, 204, "delete 204");

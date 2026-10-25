@@ -1,4 +1,5 @@
 import type { GeneratedSite, SiteListItem } from "../lib/api-types";
+import { rateLimit } from "./auth";
 import { requireUser } from "./auth";
 import { Ctx, HttpError, json, readJson } from "./lib/util";
 
@@ -7,6 +8,9 @@ const STYLES: Record<string, string> = {
   classic: "traditional, elegant design with a warm palette, serif headings, subtle borders and a professional feel",
   bold: "vibrant, high-contrast design with a dark background, bright accent colors, large headings and strong visual impact",
 };
+
+// Hosted pages are AI-written HTML on our own origin: sandbox them so no script can run as a visitor.
+const HOSTED_SITE_CSP = "sandbox allow-popups; default-src 'none'; style-src 'unsafe-inline'; img-src https: data:; font-src https: data:; base-uri 'none'; form-action 'none'";
 
 function slugify(text: string): string {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 40) || "site";
@@ -46,6 +50,8 @@ Requirements:
 - Responsive design that works on mobile and desktop
 - Sections: hero with business name and tagline, about section, services/features section (3 items), contact section, footer
 - Professional, real-looking content based on the business description
+- Use ONLY facts that appear in the description. Never invent phone numbers, email addresses, street addresses or house numbers, prices, opening hours, years, awards, certifications, statistics, customer counts, reviews or testimonials. If a detail is not in the description, leave it out and use a general invitation such as "Get in touch to learn more"
+- Do not add a copyright year; the footer should only show the business name
 - Clean, semantic HTML
 - The page must be self-contained with all CSS inline in a <style> tag
 - Use modern CSS (flexbox, grid, media queries)
@@ -71,6 +77,7 @@ Return ONLY the HTML code, nothing else. No markdown, no explanation.`;
 
 export async function generate(c: Ctx): Promise<Response> {
   const user = await requireUser(c);
+  await rateLimit(c, "generate", user.id, 30);
   const body = await readJson<{ description?: string; style?: string }>(c.request, 8192);
   const description = String(body.description || "").trim();
   const style = String(body.style || "modern").toLowerCase();
@@ -136,5 +143,5 @@ export async function serveSite(c: Ctx): Promise<Response> {
   if (!row) return new Response("Website not found", { status: 404, headers: { "Content-Type": "text/html" } });
   const ent = await c.env.DB.prepare(`SELECT expires_at FROM entitlements WHERE user_id = ?`).bind(row.user_id).first<{ expires_at: number }>();
   if (!ent || ent.expires_at < Date.now()) return new Response("<html><body><h1>This website is no longer available</h1><p>The hosting period has ended. Visit <a href='/'>OnePageForge</a> to create your own website.</p></body></html>", { status: 410, headers: { "Content-Type": "text/html" } });
-  return new Response(row.html, { status: 200, headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "public, max-age=300" } });
+  return new Response(row.html, { status: 200, headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "public, max-age=300", "Content-Security-Policy": HOSTED_SITE_CSP } });
 }

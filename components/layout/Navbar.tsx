@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "./ThemeToggle";
 import { navLinks } from "@/lib/data";
 import { useAuth } from "@/lib/auth";
 
@@ -20,7 +21,8 @@ export function Navbar() {
             <Link key={l.href} href={l.href} className="inline-flex min-h-[44px] items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">{l.label}</Link>
           ))}
         </div>
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-1 md:flex">
+          <ThemeToggle />
           {status === "in" ? (
             <>
               <Button asChild variant="ghost" size="sm"><Link href="/account/">Account</Link></Button>
@@ -33,9 +35,9 @@ export function Navbar() {
             </>
           )}
         </div>
-        <button className="-mr-2 flex h-11 w-11 items-center justify-center md:hidden" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"}>
+        <div className="flex items-center md:hidden"><ThemeToggle /><button className="-mr-2 flex h-11 w-11 items-center justify-center" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"}>
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        </button></div>
       </nav>
       {open && (
         <div className="border-t border-border/40 bg-background px-5 pb-6 pt-4 md:hidden">

@@ -28,6 +28,16 @@ The schema is created lazily on the first request. Do not create the database by
 
 Settings > Domains & Routes: add the domain and www.domain (the worker redirects http and www to https on the apex).
 
+## Stripe Payment Links
+
+One per plan: one-time price in USD, product named exactly like the plan, correctly spelled description (for example "One-time payment, 3 months of access").
+After payment, redirect to `https://onepageforge.com/success/?session_id={CHECKOUT_SESSION_ID}`.
+Put each URL in `stripeLinks` in `lib/site-config.ts`. The amount must equal `PLAN_CATALOG` in `lib/api-types.ts`.
+
+## Cleanup without cron
+
+There is no cron trigger (Workers Free allows 5 per account). Expired sessions, rate-limit rows, old contact messages and generated sites of plans that ended more than 30 days ago are purged in the background on about 1 in 200 API requests (`worker/lib/purge.ts`).
+
 ## Secrets and variables
 
 | Name | Where | Purpose |

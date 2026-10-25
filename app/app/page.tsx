@@ -167,6 +167,7 @@ export default function AppPage() {
                 </div>
                 <div className="flex shrink-0 gap-2">
                   <Button size="sm" variant="outline" onClick={() => onView(s.id)}>View</Button>
+                  <Button size="sm" variant="outline" onClick={() => { setDescription(s.description); setStyle(s.style); window.scrollTo({ top: 0, behavior: "smooth" }); }}>Edit</Button>
                   <Button size="sm" variant="outline" onClick={() => onDelete(s.id)} className="text-red-500 hover:text-red-500"><Trash2 className="h-4 w-4" /></Button>
                 </div>
               </div>

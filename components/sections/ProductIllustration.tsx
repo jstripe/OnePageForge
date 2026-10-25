@@ -15,8 +15,8 @@ export function ProductIllustration({ className = "" }: { className?: string }) 
   }, []);
 
   return (
-    <figure ref={ref} className={`${visible ? "" : "demo-paused"} ${className}`}>
-      <div className="demo-float relative mx-auto max-w-3xl">
+    <figure ref={ref} className={`${visible ? "" : "mock-paused"} ${className}`}>
+      <div className="mock-float relative mx-auto max-w-3xl">
         <div className="absolute -inset-6 rounded-[2rem] bg-primary/20 blur-3xl" aria-hidden />
         <div className="relative overflow-hidden rounded-2xl border border-border/70 bg-card shadow-[0_30px_80px_-30px_hsl(var(--primary)/0.55),0_2px_0_0_hsl(0_0%_100%/0.05)_inset]">
           <div className="flex items-center gap-1.5 border-b border-border/60 px-4 py-3">
@@ -30,8 +30,8 @@ export function ProductIllustration({ className = "" }: { className?: string }) 
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Describe your business</p>
               <div className="mt-3 rounded-xl border border-border bg-background p-3 text-sm">
                 <div className="flex">
-                  <span className="demo-type block">Family bakery in Leeds, fresh bread daily</span>
-                  <span className="demo-caret ml-0.5 inline-block w-px bg-primary" />
+                  <span className="mock-type block">Family bakery in Leeds, fresh bread daily</span>
+                  <span className="mock-caret ml-0.5 inline-block w-px bg-primary" />
                 </div>
               </div>
               <div className="mt-3 flex gap-2 text-xs">
@@ -46,15 +46,15 @@ export function ProductIllustration({ className = "" }: { className?: string }) 
             <div className="bg-muted/40 p-5">
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Preview</p>
               <div className="mt-3 space-y-2.5 rounded-xl border border-border bg-background p-4">
-                <div className="demo-build h-3 w-2/5 rounded bg-primary/70" />
-                <div className="demo-build d2 h-2 w-full rounded bg-muted-foreground/30" />
-                <div className="demo-build d2 h-2 w-4/5 rounded bg-muted-foreground/30" />
-                <div className="demo-build d3 mt-3 grid grid-cols-3 gap-2">
+                <div className="mock-build h-3 w-2/5 rounded bg-primary/70" />
+                <div className="mock-build d2 h-2 w-full rounded bg-muted-foreground/30" />
+                <div className="mock-build d2 h-2 w-4/5 rounded bg-muted-foreground/30" />
+                <div className="mock-build d3 mt-3 grid grid-cols-3 gap-2">
                   <div className="h-10 rounded-md bg-primary/15" />
                   <div className="h-10 rounded-md bg-primary/15" />
                   <div className="h-10 rounded-md bg-primary/15" />
                 </div>
-                <div className="demo-build d3 h-6 w-1/3 rounded-md bg-primary" />
+                <div className="mock-build d3 h-6 w-1/3 rounded-md bg-primary" />
               </div>
             </div>
           </div>

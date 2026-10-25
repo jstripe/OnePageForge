@@ -3,6 +3,7 @@ import * as React from "react";
 import { Mail, Clock, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Photo } from "@/components/sections/Photo";
 import { siteConfig } from "@/lib/site-config";
 import { api, ApiException } from "@/lib/api";
 
@@ -74,6 +75,9 @@ export default function ContactPage() {
               <p className="mt-2 text-sm font-medium">Company</p>
               <p className="text-sm text-muted-foreground">{siteConfig.legalEntity}</p>
               <p className="text-sm text-muted-foreground">{siteConfig.registeredOffice}</p>
+            </div>
+            <div className="overflow-hidden rounded-2xl border">
+              <Photo name="consultant" alt="A consultant meeting with a client" sizes="(min-width: 1024px) 380px, 100vw" className="aspect-[3/2] w-full object-cover" />
             </div>
           </div>
         </div>

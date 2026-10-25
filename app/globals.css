@@ -92,23 +92,23 @@ html { scroll-behavior: smooth; }
 
 @keyframes marquee-left { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 0.375rem)); } }
 @keyframes marquee-right { from { transform: translateX(calc(-50% - 0.375rem)); } to { transform: translateX(0); } }
-@keyframes demo-type { 0%, 8% { width: 0; } 40%, 92% { width: 100%; } 100% { width: 0; } }
-@keyframes demo-caret { 50% { opacity: 0; } }
-@keyframes demo-build { 0%, 42% { opacity: 0; transform: translateY(10px); } 52%, 92% { opacity: 1; transform: none; } 100% { opacity: 0; } }
-@keyframes demo-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-.demo-type { overflow: hidden; white-space: nowrap; animation: demo-type 9s steps(34, end) infinite; }
-.demo-caret { animation: demo-caret 0.9s steps(1) infinite; }
-.demo-build { opacity: 0; animation: demo-build 9s ease-out infinite; }
-.demo-build.d2 { animation-delay: 0.25s; }
-.demo-build.d3 { animation-delay: 0.5s; }
-.demo-float { animation: demo-float 6s ease-in-out infinite; }
-.demo-paused * { animation-play-state: paused !important; }
+@keyframes mock-type { 0%, 8% { width: 0; } 40%, 92% { width: 100%; } 100% { width: 0; } }
+@keyframes mock-caret { 50% { opacity: 0; } }
+@keyframes mock-build { 0%, 42% { opacity: 0; transform: translateY(10px); } 52%, 92% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+@keyframes mock-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+.mock-type { overflow: hidden; white-space: nowrap; animation: mock-type 9s steps(34, end) infinite; }
+.mock-caret { animation: mock-caret 0.9s steps(1) infinite; }
+.mock-build { opacity: 0; animation: mock-build 9s ease-out infinite; }
+.mock-build.d2 { animation-delay: 0.25s; }
+.mock-build.d3 { animation-delay: 0.5s; }
+.mock-float { animation: mock-float 6s ease-in-out infinite; }
+.mock-paused * { animation-play-state: paused !important; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .marquee-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
   .marquee-track [aria-hidden="true"] { display: none; }
-  .demo-type { animation: none; width: 100%; }
-  .demo-caret, .demo-float { animation: none; }
-  .demo-build { animation: none; opacity: 1; transform: none; }
+  .mock-type { animation: none; width: 100%; }
+  .mock-caret, .mock-float { animation: none; }
+  .mock-build { animation: none; opacity: 1; transform: none; }
 }

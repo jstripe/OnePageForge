@@ -67,6 +67,7 @@ export function Footer() {
           </div>
           <div className="text-center text-xs text-muted-foreground sm:text-right">
             <p>&copy; {new Date().getFullYear()} {siteConfig.legalEntity}. All rights reserved.</p>
+            <p className="mt-1">Photos by Pexels contributors. Product examples are labelled "Illustrative example".</p>
             <p className="mt-1">{siteConfig.name} is a product of {siteConfig.legalEntity}, {siteConfig.legalForm}, {siteConfig.registrationNumber}, {siteConfig.registeredOffice}.</p>
           </div>
           <button

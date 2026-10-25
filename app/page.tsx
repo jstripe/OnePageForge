@@ -6,9 +6,9 @@ import { siteConfig } from "@/lib/site-config";
 import { features, steps, faqs, audiences, plans, marqueeRowA, marqueeRowB } from "@/lib/data";
 import { JsonLd, faqPage } from "@/components/JsonLd";
 import { UseCases } from "@/components/sections/UseCases";
+import { ProductTour } from "@/components/sections/ProductTour";
 import { Photo } from "@/components/sections/Photo";
 import { Marquee } from "@/components/sections/Marquee";
-import { ProductIllustration } from "@/components/sections/ProductIllustration";
 import { BuyButton } from "@/components/BuyButton";
 
 const iconMap = { Sparkles, Globe, Smartphone, Palette, RefreshCw, Download, UtensilsCrossed, Briefcase, Scissors, Users, GraduationCap, Store } as const;
@@ -48,7 +48,7 @@ export default function HomePage() {
           <div className="relative">
             <div className="absolute -inset-4 rounded-[2rem] bg-primary/20 blur-3xl" aria-hidden />
             <div className="relative overflow-hidden rounded-3xl border border-border/70 shadow-[0_30px_80px_-30px_hsl(var(--primary)/0.55)]">
-              <Photo name="home-hero" alt="A small business owner working on a laptop behind a cafe counter" priority sizes="(min-width: 1024px) 600px, 100vw" className="aspect-[4/3] w-full object-cover" />
+              <Photo name="home-hero" alt="A woman working on a laptop behind a cafe counter" priority sizes="(min-width: 1024px) 600px, 100vw" className="aspect-[4/3] w-full object-cover" />
             </div>
           </div>
         </div>
@@ -122,7 +122,6 @@ export default function HomePage() {
             <h2 className="font-heading text-3xl font-bold sm:text-4xl">Three steps to your website</h2>
             <p className="mt-4 text-muted-foreground">No design skills, no coding, no complicated builder.</p>
           </div>
-          <ProductIllustration className="mt-12" />
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((s) => (
               <div key={s.number} className="text-center">
@@ -132,6 +131,17 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Product tour */}
+      <section className="px-5 py-20 sm:px-6 sm:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="font-heading text-3xl font-bold sm:text-4xl">See the workflow</h2>
+            <p className="mt-4 text-muted-foreground">From a short description to a live link, in three steps.</p>
+          </div>
+          <div className="mt-12"><ProductTour /></div>
         </div>
       </section>
 

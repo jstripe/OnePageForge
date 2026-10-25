@@ -33,7 +33,7 @@ export default function FeaturesPage() {
           <div className="relative">
             <div className="absolute -inset-4 rounded-[2rem] bg-primary/20 blur-3xl" aria-hidden />
             <div className="relative overflow-hidden rounded-3xl border border-border/70 shadow-[0_30px_80px_-30px_hsl(var(--primary)/0.55)]">
-              <Photo name="features-hero" alt="A shop owner working on a laptop in a bright room with boxes and flowers" priority sizes="(min-width: 1024px) 600px, 100vw" className="aspect-[4/3] w-full object-cover" />
+              <Photo name="features-hero" alt="A woman working on a laptop in a bright room with boxes and flowers" priority sizes="(min-width: 1024px) 600px, 100vw" className="aspect-[4/3] w-full object-cover" />
             </div>
           </div>
         </div>
@@ -56,6 +56,8 @@ export default function FeaturesPage() {
                 <div>
                   <h2 className="text-2xl font-bold">{f.title}</h2>
                   <p className="mt-3 text-muted-foreground">{f.description}</p>
+                  <p className="mt-3 text-muted-foreground">{f.details}</p>
+                  <p className="mt-3 text-sm text-muted-foreground"><span className="font-medium text-foreground">Good to know: </span>{f.limits}</p>
                   <Button asChild variant="link" className="mt-3 px-0">
                     <Link href="/app/">Try it now <ArrowRight className="ml-1 h-4 w-4" /></Link>
                   </Button>

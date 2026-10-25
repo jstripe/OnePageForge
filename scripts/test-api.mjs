@@ -106,6 +106,7 @@ async function main() {
   eq((await A.req("GET", "/api/sites")).data.sites.length, 1, "site listed");
   eq((await A.req("GET", "/api/sites/" + g.data.id)).status, 200, "owner can read site");
   const pub = await fetch(BASE + "/s/" + g.data.slug); eq(pub.status, 200, "hosted site served at /s/slug");
+  ok((pub.headers.get("content-security-policy") || "").includes("sandbox"), "hosted site is sandboxed by CSP");
   eq((await noPlan.req("GET", "/api/sites/" + g.data.id)).status, 404, "other user cannot read site");
   eq((await noPlan.req("DELETE", "/api/sites/" + g.data.id)).status, 404, "other user cannot delete site");
   eq((await noPlan.req("GET", "/api/sites")).data.sites.length, 0, "other user sees no sites");

@@ -4,15 +4,15 @@ export const siteConfig = {
   tagline: "Describe your business. Get a website.",
   description: "Enter a short description of your business and get a complete, hosted one-page website. No builder to learn, no code to write.",
 
-  legalEntity: "{{LEGAL ENTITY}}",
-  legalForm: "{{LEGAL FORM}}",
-  registrationNumber: "{{REGISTRATION NUMBER}}",
-  registeredOffice: "{{REGISTERED OFFICE}}",
+  legalEntity: "DIGISMART MEGA LTD",
+  legalForm: "private limited company registered in England and Wales",
+  registrationNumber: "Company number: 16925464",
+  registeredOffice: "Registered office: 192 Downing Road, Dagenham, England, RM9 6LU",
   governingLaw: "{{GOVERNING LAW}}",
 
   supportEmail: "support@onepageforge.com",
   supportHours: "Monday to Friday, 9 AM to 5 PM GMT",
-  phone: "",
+  phone: "+1 (587) 973-3813",
 
   launchMonth: "October 2026",
   creditDefinition: "1 credit = 1 website generated",

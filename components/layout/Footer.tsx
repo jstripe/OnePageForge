@@ -57,22 +57,23 @@ export function Footer() {
           </div>
         </div>
         <hr className="my-10 border-border/40" />
-        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col items-start justify-start gap-4 sm:flex-row sm:items-start">
+          <div className="order-2 flex items-center gap-4 sm:order-2">
             {liveSocials.map((k) => (
               <a key={k} href={siteConfig.social[k].url} target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-foreground" aria-label={k}>
                 {socialIcons[k]}
               </a>
             ))}
           </div>
-          <div className="text-center text-xs text-muted-foreground sm:text-right">
-            <p>&copy; {new Date().getFullYear()} {siteConfig.legalEntity}. All rights reserved.</p>
-            <p className="mt-1">Photos by Pexels contributors. Product examples are labelled "Illustrative example".</p>
+          <div dir="ltr" className="order-1 text-left text-xs text-muted-foreground sm:order-1 sm:mr-auto">
+            <p>&copy; 2026 {siteConfig.legalEntity}. All rights reserved.</p>
             <p className="mt-1">{siteConfig.name} is a product of {siteConfig.legalEntity}, {siteConfig.legalForm}, {siteConfig.registrationNumber}, {siteConfig.registeredOffice}.</p>
+            <p className="mt-1">Support: <a href={`mailto:${siteConfig.supportEmail}`} className="underline underline-offset-4">{siteConfig.supportEmail}</a>. <a href={`tel:${siteConfig.phone.replace(/[^+\d]/g, "")}`} className="underline underline-offset-4">{siteConfig.phone}</a></p>
+            <p className="mt-1">Photos by Pexels contributors.</p>
           </div>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-border/40 text-muted-foreground transition-colors hover:text-foreground"
+            className="order-3 flex h-11 w-11 items-center justify-center rounded-full border border-border/40 text-muted-foreground transition-colors hover:text-foreground sm:ml-auto"
             aria-label="Back to top"
           >
             <ArrowUp className="h-4 w-4" />
